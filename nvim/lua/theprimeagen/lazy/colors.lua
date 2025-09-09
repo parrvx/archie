@@ -1,33 +1,22 @@
 return {
-  {
     "folke/tokyonight.nvim",
-    name = "tokyonight",
+    lazy = false,
     priority = 1000,
+    opts = {},
 
     config = function()
-      local config_options = {
-        style = "night",
-        transparent = true,
-        styles = {
-          comments = { "italic" },
-          keywords = { "italic" },
-        },
-        integrations = {
-          treesitter = true,
-          native_lsp = {
-            enabled = true,
-          },
-          telescope = true,
-          mason = true,
-          cmp = true,
-        },
-      }
-
-      -- Tenta configurar o tema com segurança.
-      pcall(require("tokyonight").setup, config_options)
-
-      -- Tenta aplicar o tema de cores.
-      pcall(vim.cmd.colorscheme, "tokyonight")
-    end,
-  },
+        require("tokyonight"):setup({
+            style = "night",
+            transparent = false, -- Enable this to disable setting the background color
+            styles = {
+                functions = {}
+            },
+            -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+            on_colors = function(colors)
+                colors.hint = colors.orange
+                colors.error = "#ff0000"
+            end
+        })
+        vim.cmd([[colorscheme tokyonight]])
+    end
 }
