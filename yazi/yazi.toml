@@ -1,0 +1,19 @@
+# ~/.config/yazi/yazi.toml
+# ~/.config/yazi/yazi.toml
+
+[opener]
+# 1. Regra para arquivos PDF
+pdf = [
+    { run = "zathura '$@'", block = true, desc = "Abrir com Zathura" },
+]
+
+# 2. Regra para arquivos de atalho de internet (.url)
+url = [
+    { run = "firefox \"$(grep -oP '^URL=\\K.*' '$@')\"", block = false, desc = "Abrir URL no Firefox" },
+]
+
+# 3. ⭐ CORREÇÃO APLICADA AQUI
+text = [
+    { run = "$EDITOR '$@'", block = true, desc = "Editar com Neovim" },
+]
+
