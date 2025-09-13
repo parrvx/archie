@@ -4,7 +4,7 @@ return {
   tag = "0.1.5",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    -- Declara o plugin do Zotero e sua dependência aqui
+    -- 1. Declara a extensão Zotero e sua dependência sqlite.lua aqui
     {
       "jmbuhr/telescope-zotero.nvim",
       dependencies = { "kkharji/sqlite.lua" },
@@ -12,9 +12,9 @@ return {
   },
 
   config = function()
-    -- Configuração principal do Telescope
+    -- 2. Configuração principal do Telescope
     require("telescope").setup({
-      -- Configuração específica para a extensão zotero
+      -- Adiciona a seção de configuração para a extensão zotero
       extensions = {
         zotero = {
           -- Aponta para o seu diretório de dados do Zotero
@@ -23,10 +23,10 @@ return {
       },
     })
 
-    -- Carrega a extensão APÓS a configuração
+    -- 3. Carrega a extensão APÓS a configuração
     require("telescope").load_extension("zotero")
 
-    -- Seus atalhos existentes
+    -- Seus atalhos existentes do Telescope
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
     vim.keymap.set('n', '<C-p>', builtin.git_files, {})
@@ -47,7 +47,7 @@ return {
     })
     vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
-    -- Atalho final para o Zotero
+    -- 4. Atalho final para o Zotero
     vim.keymap.set("n", "<leader>zc", "<cmd>Telescope zotero<cr>", { desc = "Zotero: Citações" })
   end,
 }
