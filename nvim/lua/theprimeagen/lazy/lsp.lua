@@ -41,6 +41,7 @@ return {
 		 "marksman",      -- Ótimo para Markdown
 		 "pyright",       -- Adicione para Python
 		 "sqlls",         -- Adicione para SQL
+		 "texlab",         -- Adicione para LaTeX
       },
       handlers = {
         function(server_name) -- default handler (optional)

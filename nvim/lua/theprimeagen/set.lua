@@ -40,3 +40,9 @@ vim.opt.updatetime = 300
 -- Desativa provedores não utilizados para limpar o :checkhealth
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- Ativa o corretor ortográfico no Nvim
+vim.opt.spell = true
+vim.opt.spelllang = "pt_br,en_us"
+-- Adicione esta linha perto das outras opções de spell
+vim.opt.spellfile = vim.fn.stdpath("data") .. "/spell/pt.utf-8.add"

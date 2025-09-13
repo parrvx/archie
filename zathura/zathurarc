@@ -1,0 +1,19 @@
+# ~/.config/zathura/zathurarc
+
+# --- Navegação Vim-like ---
+map J next
+map K previous
+map h scroll left
+map l scroll right
+map j scroll down
+map k scroll up
+map L scroll full-down
+map H scroll full-up
+
+# --- Zoom ---
+map + zoom in
+map - zoom out
+map = zoom 100
+
+# --- Outros ---
+set selection-clipboard clipboard
