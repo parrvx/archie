@@ -49,3 +49,4 @@ vim.keymap.set(
 )
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>oo", ":ObsidianToday<CR>")
