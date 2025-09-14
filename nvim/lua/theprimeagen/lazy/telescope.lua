@@ -18,7 +18,7 @@ return {
       extensions = {
         zotero = {
           -- Aponta para o seu diretório de dados do Zotero
-          zotero_path = os.getenv("HOME") .. "/Zotero",
+            zotero_path = os.getenv("HOME") .. "/.var/app/org.zotero.Zotero/data/Zotero",
         },
       },
     })
