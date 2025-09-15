@@ -12,8 +12,20 @@ return {
   },
 
   config = function()
+    -- Para facilitar, vamos carregar as 'actions' do telescope em uma variável local
+    local actions = require("telescope.actions")
     -- 2. Configuração principal do Telescope
     require("telescope").setup({
+      -- Adicione a seção de "defaults" para aplicar a configuração
+      defaults = {
+        initial_mode = "normal", -- ⭐ Inicia o Telescope em modo normal
+                -- ⭐ Adicione esta seção de mapeamentos
+        mappings = {
+          n = {
+            ["q"] = actions.close,
+          },
+        },
+      },
       -- Adiciona a seção de configuração para a extensão zotero
       extensions = {
         zotero = {
