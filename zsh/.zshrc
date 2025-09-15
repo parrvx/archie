@@ -52,6 +52,7 @@ alias ll='ls -lha'
 alias gs='git status'
 alias lg='lazygit'
 alias vi='nvim'
+alias ya='yazi'
 
 if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec Hyprland

@@ -7,6 +7,13 @@ return {
     -- Os atalhos foram movidos para a tabela 'keys'.
     require("harpoon"):setup()
   end,
+  settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+        key = function()
+            return vim.loop.cwd()
+        end,
+  },
   keys = {
     {
       "<leader>a",
