@@ -1,0 +1,11 @@
+# Recarrega todos os feeds ao iniciar
+reload-on-startup yes
+
+# Define o navegador para abrir os links (use o que preferir)
+browser "firefox %u"
+
+# --- Cores (para combinar com o tema Tokyo Night) ---
+article-title-fg "blue" "default"
+article-title-bg "default" "default"
+color "listfocus" "white" "blue"
+color "listfocus_unread" "white" "blue"

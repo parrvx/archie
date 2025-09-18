@@ -1,0 +1,8 @@
+# Define o tema para combinar com seu setup
+--theme="TokyoNight"
+
+# Adiciona numeração de linhas
+--style="numbers"
+
+# Habilita o pager para arquivos longos (como o 'less')
+--paging=always

@@ -53,7 +53,25 @@ alias gs='git status'
 alias lg='lazygit'
 alias vi='nvim'
 alias ya='yazi'
+alias cat='bat'
+
+# --- Alias para Pass (Password Manager) com fzf (Versão Corrigida) ---
+# Navega para o diretório do cofre e encontra os arquivos, preservando a estrutura de pastas.
+alias p='(cd ~/.password-store && find . -type f -name "*.gpg" | sed "s|^\./||" | sed "s/\.gpg$//") | fzf | xargs -r pass -c'
 
 if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec Hyprland
 fi
+
+# --- Configuração do FZF (Fuzzy Finder) ---
+# Ativa a integração do fzf com o Zsh para autocompletar e atalhos
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+# --- Configuração do Zoxide (Navegação Inteligente) ---
+# Inicia o zoxide com o Zsh
+eval "$(zoxide init zsh)"
+
+# --- Alias para Zoxide ---
+# 'zi' para busca interativa de diretórios com fzf
+alias zi='z -i'
